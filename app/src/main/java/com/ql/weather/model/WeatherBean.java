@@ -12,7 +12,7 @@ public class WeatherBean implements Serializable {
     private String weather;
     private String low;
     private String wind;
-    private String windNum;
+    private String city;
     private String richu;
     private String Nhigh;
     private String Nweather;
@@ -22,17 +22,21 @@ public class WeatherBean implements Serializable {
     private String Nriluo;
     private String week;
     private String nongli;
-    private String time;private String temperature;private String humidity;private String info;
+    private String time;
+    private String temperature;
+    private String humidity;
+    private String info;
+
     public WeatherBean() {
     }
 
-    public WeatherBean(String date, String high, String weather, String low, String wind, String windNum, String richu, String nhigh, String nweather, String nlow, String nwind, String nwindNum, String nriluo, String week, String nongli, String time, String temperature, String humidity, String info) {
+    public WeatherBean(String date, String high, String weather, String low, String wind, String city, String richu, String nhigh, String nweather, String nlow, String nwind, String nwindNum, String nriluo, String week, String nongli, String time, String temperature, String humidity, String info) {
         this.date = date;
         this.high = high;
         this.weather = weather;
         this.low = low;
         this.wind = wind;
-        this.windNum = windNum;
+        this.city = city;
         this.richu = richu;
         Nhigh = nhigh;
         Nweather = nweather;
@@ -120,12 +124,12 @@ public class WeatherBean implements Serializable {
         this.wind = wind;
     }
 
-    public String getWindNum() {
-        return windNum;
+    public String getCity() {
+        return city;
     }
 
-    public void setWindNum(String windNum) {
-        this.windNum = windNum;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getRichu() {

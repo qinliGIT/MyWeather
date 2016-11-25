@@ -5,7 +5,7 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg"
+    android:background="@mipmap/mid_rain"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.ql.weather.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -13,29 +13,43 @@
     <RelativeLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.ql.weather.custom.FZLTTextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="my my"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
+            android:drawableLeft="@mipmap/locate_indicator"
+            android:layout_toLeftOf="@+id/share"
+            android:drawablePadding="@dimen/layout_x_8"
+            android:padding="@dimen/layout_x_10"
+            android:text="深圳"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/layout_x_18" />
 
         <ImageView
+            android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:padding="10dp"
-            android:src="@mipmap/more" />
+            android:layout_marginRight="@dimen/layout_x_15"
+            android:padding="@dimen/layout_x_12"
+            android:src="@mipmap/about" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/layout_x_15"
+            android:layout_toLeftOf="@+id/about"
+            android:src="@mipmap/share" />
     </RelativeLayout>
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:layout_below="@+id/bar"
         android:scrollbars="none">
 
@@ -51,6 +65,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/wea_img"
                     android:layout_alignParentRight="true"
                     android:padding="15dp"
                     android:src="@mipmap/zhongyu" />
@@ -61,60 +76,68 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/tempNum"
-                    android:padding="10dp"
+                    android:padding="@dimen/layout_x_15"
                     android:textColor="@android:color/white"
-                    android:textSize="100sp" />
+                    android:textSize="@dimen/layout_x_120" />
 
                 <com.ql.weather.custom.FZLTTextView
                     android:id="@+id/MainWea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/temp"
+                    android:layout_marginBottom="@dimen/layout_x_30"
+                    android:layout_toRightOf="@+id/temp"
                     android:textColor="@android:color/white"
-                    android:textSize="50sp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_toRightOf="@+id/temp" />
+                    android:textSize="@dimen/layout_x_80" />
 
                 <com.ql.weather.custom.FZLTTextView
                     android:id="@+id/mild"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
-                    android:layout_marginLeft="20dp"
                     android:layout_above="@+id/up"
-                    android:layout_toRightOf="@+id/tempNum" />
+                    android:layout_marginLeft="@dimen/layout_x_30"
+                    android:layout_toRightOf="@+id/tempNum"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/layout_x_20" />
 
                 <com.ql.weather.custom.FZLTTextView
                     android:id="@+id/tempNum"
                     android:layout_width="wrap_content"
-                    android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/up" />
+                    android:layout_above="@+id/up"
+                    android:drawableLeft="@mipmap/temperature_small_img"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/layout_x_20" />
 
                 <com.ql.weather.custom.FZLTTextView
                     android:id="@+id/windNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
                     android:layout_above="@+id/up"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@mipmap/wind_samll_img"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/layout_x_20" />
 
                 <com.ql.weather.custom.FZLTTextView
                     android:id="@+id/dateNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:textColor="@android:color/white"
                     android:layout_above="@+id/up"
-                    android:layout_alignParentRight="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@mipmap/date"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/layout_x_20" />
 
                 <ImageView
                     android:id="@+id/up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="3dp"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
                     android:src="@mipmap/today_weather_extra_arrow" />
             </RelativeLayout>
 
@@ -127,8 +150,8 @@
                 <com.ql.weather.custom.MyListView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></com.ql.weather.custom.MyListView>
-
+                    android:layout_height="wrap_content">
+                </com.ql.weather.custom.MyListView>
 
             </RelativeLayout>
         </RelativeLayout>

@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
+import com.google.gson.Gson;
+import com.ql.weather.model.NewsAllBean;
+import com.ql.weather.model.NewsOtherBean;
 import com.ql.weather.model.WeatherBean;
 
 import org.json.JSONArray;
@@ -67,6 +70,7 @@ public class Https {
                     bean = new WeatherBean();
                     JSONObject obj = (JSONObject) firstArray.get(i);
                     bean.setTime(oo.getString("time"));
+                    bean.setCity(oo.getString("city_name"));
                     bean.setTemperature(finalObj.getString("temperature"));
                     bean.setHumidity(finalObj.getString("humidity"));
                     bean.setInfo(finalObj.getString("info"));

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ql.weather.R;
@@ -51,18 +52,44 @@ public class WeatherAdaptwe extends BaseAdapter {
             holder.weather = (TextView) convertView.findViewById(R.id.weather);
             holder.wind = (TextView) convertView.findViewById(R.id.wind);
             holder.week = (TextView) convertView.findViewById(R.id.week);
+            holder.ic_weather = (ImageView) convertView.findViewById(R.id.ic_weather);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.temp.setText(list.get(position).getNhigh() + "℃~" + list.get(position).getHigh()+"℃");
-        holder.weather.setText(list.get(position).getWeather());
+        String wea = list.get(position).getWeather();
+        holder.temp.setText(list.get(position).getNhigh() + "℃~" + list.get(position).getHigh() + "℃");
+        holder.weather.setText(wea);
         holder.wind.setText(list.get(position).getWind());
         holder.week.setText(list.get(position).getWeek());
+        if (wea.contains("小雨")) {
+            holder.ic_weather.setImageResource(R.mipmap.xiaoyu);
+        }
+        if (wea.contains("大雨")) {
+            holder.ic_weather.setImageResource(R.mipmap.dayu);
+        }
+        if (wea.contains("中雨")) {
+            holder.ic_weather.setImageResource(R.mipmap.zhyu);
+        }
+        if (wea.contains("暴雨")) {
+            holder.ic_weather.setImageResource(R.mipmap.baoyu);
+        }
+        if (wea.contains("多云")) {
+            holder.ic_weather.setImageResource(R.mipmap.duoyun);
+        }
+        if (wea.contains("阴")) {
+            holder.ic_weather.setImageResource(R.mipmap.yin);
+        }
+        if (wea.contains("晴")) {
+            holder.ic_weather.setImageResource(R.mipmap.qing);
+        }if (wea.contains("小雪")) {
+            holder.ic_weather.setImageResource(R.mipmap.xiaoxue);
+        }
         return convertView;
     }
 
     private class ViewHolder {
-        TextView  wind, weather,temp,week;
+        TextView wind, weather, temp, week;
+        ImageView ic_weather;
     }
 }

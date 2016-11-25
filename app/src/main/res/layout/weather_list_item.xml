@@ -9,26 +9,26 @@
         android:id="@+id/week"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/layout_x_15"
         android:gravity="center"
-        android:padding="6dp"
+        android:padding="@dimen/layout_x_8"
         android:text="454545"
         android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textSize="@dimen/layout_x_20" />
 
     <com.ql.weather.custom.FZLTTextView
         android:id="@+id/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="6dp"
+        android:layout_marginTop="@dimen/layout_x_15"
+        android:padding="@dimen/layout_x_8"
         android:gravity="center"
         android:layout_toRightOf="@+id/week"
         android:layout_toLeftOf="@+id/ic_weather"
-        android:paddingLeft="10dp"
+        android:paddingLeft="@dimen/layout_x_15"
         android:text="454545"
         android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textSize="@dimen/layout_x_20" />
 
 
     <ImageView
@@ -37,15 +37,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="@dimen/layout_x_15"
         android:src="@mipmap/sm_snow" />
 
     <com.ql.weather.custom.FZLTTextView
         android:id="@+id/wind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="6dp"
+        android:layout_marginTop="@dimen/layout_y_15"
+        android:textSize="@dimen/layout_x_20"
+        android:padding="@dimen/layout_x_8"
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:textColor="@android:color/white" />
@@ -55,10 +56,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/layout_y_15"
+        android:textSize="@dimen/layout_x_20"
         android:layout_toRightOf="@+id/ic_weather"
         android:layout_toLeftOf="@+id/wind"
-        android:padding="6dp"
-        android:layout_marginRight="10dp"
+        android:padding="@dimen/layout_x_8"
+        android:layout_marginRight="@dimen/layout_x_15"
         android:textColor="@android:color/white" />
 </RelativeLayout>
